@@ -90,8 +90,8 @@
 				3C0AC4E724A7345E0056B6EA /* Challenge.xcdatamodeld */,
 				3C0AC53924A75E190056B6EA /* NNNRecordMO.h */,
 				3C0AC53124A75AE00056B6EA /* NNNRecordMO.m */,
-				3C0AC53624A75BB00056B6EA /* NNNDataManager.m */,
 				3C0AC53824A75C240056B6EA /* NNNDataManager.h */,
+				3C0AC53624A75BB00056B6EA /* NNNDataManager.m */,
 			);
 			path = CoreData;
 			sourceTree = "<group>";

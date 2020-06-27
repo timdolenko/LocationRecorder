@@ -12,19 +12,26 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
-    private let recordManager = NNNRecordManager()
-    
     private static var reuseIdentifier = "identifier"
 
+    private var sceneDelegate: SceneDelegate {
+        view.window!.windowScene!.delegate as! SceneDelegate
+    }
+    private var recordManager: NNNRecordManager {
+        sceneDelegate.recordManager
+    }
+    private var records: [NNNRecord] {
+        recordManager.records as? [NNNRecord] ?? []
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        recordManager.delegate = self
         configureTableView()
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        
+        recordManager.delegate = self
         recordManager.start()
     }
     
@@ -57,16 +64,14 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         return 1
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return recordManager.records.count
+        return records.count
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: ViewController.reuseIdentifier)
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: ViewController.reuseIdentifier),
+            indexPath.row < records.count - 1
             else { return .init() }
         
-        guard let record = recordManager.records[indexPath.row] as? NNNRecord
-            else { return .init()}
-        
-        cell.textLabel?.text = record.description()
+        cell.textLabel?.text = records[indexPath.row].description()
         
         return cell
     }

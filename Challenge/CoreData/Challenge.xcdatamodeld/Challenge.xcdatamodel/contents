@@ -3,7 +3,7 @@
     <entity name="NNNRecordMO" representedClassName="NNNRecordMO" syncable="YES">
         <attribute name="latitude" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
         <attribute name="longitude" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
-        <attribute name="modes" optional="YES" attributeType="Transformable"/>
+        <attribute name="modes" optional="YES" attributeType="Transformable" customClassName="NSArray"/>
     </entity>
     <elements>
         <element name="NNNRecordMO" positionX="-63" positionY="-18" width="128" height="88"/>
