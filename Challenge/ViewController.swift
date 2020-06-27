@@ -40,7 +40,15 @@ class ViewController: UIViewController {
 
 extension ViewController: NNNRecordManagerDelegate {
     func recordManagerDidAddNewRecord() {
-        tableView.reloadData()
+        DispatchQueue.main.async { [weak self] in
+            guard let `self` = self else { return }
+            self.tableView.reloadData()
+            let indexPath = IndexPath(
+                row: self.tableView.numberOfRows(inSection: 0) - 1,
+                section: 0
+            )
+            self.tableView.scrollToRow(at: indexPath, at: .bottom, animated: true)
+        }
     }
 }
 
