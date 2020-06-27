@@ -9,10 +9,12 @@
 #import <Foundation/Foundation.h>
 #import <CoreMotion/CoreMotion.h>
 #import "NNNRecordManager.h"
+#import "NNNDataManager.h"
 #import "NNNRecord.h"
 
 @interface NNNRecordManager()
 
+@property (nonatomic) NNNDataManager *dataManager;
 @property (nonatomic) CLLocationManager *locationManager;
 @property (nonatomic) NSArray *lastModes;
 
@@ -32,6 +34,7 @@
         _locationManager.delegate = self;
         _locationManager.distanceFilter = kCLDistanceFilterNone;
         _locationManager.desiredAccuracy = kCLLocationAccuracyHundredMeters;
+        _locationManager.allowsBackgroundLocationUpdates = true;
         
         if ([CMMotionActivityManager isActivityAvailable]) {
             _motionActivityManager = [[CMMotionActivityManager alloc] init];
@@ -40,6 +43,9 @@
         _lastModes = [[NSArray alloc] initWithObjects:
                       [NSNumber numberWithInt:Unknown], nil];
         _records = [[NSMutableArray alloc] init];
+        
+        _dataManager = [[NNNDataManager alloc] init];
+        [_dataManager loadToManager:self];
     }
     
     return self;
@@ -68,6 +74,7 @@
         NNNRecord* record = [[NNNRecord alloc] initWithLatitude:location.coordinate.latitude longitude:location.coordinate.longitude modes:_lastModes];
         [_records addObject:record];
         [_delegate recordManagerDidAddNewRecord];
+        [_dataManager saveFromManager:self];
     }
 }
 

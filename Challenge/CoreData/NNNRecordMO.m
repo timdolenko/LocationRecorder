@@ -15,8 +15,4 @@
 @dynamic longitude;
 @dynamic modes;
 
-+(void)removeData {
-    
-}
-
 @end

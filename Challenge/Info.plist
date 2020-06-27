@@ -66,5 +66,9 @@
 	<string>We need your location</string>
 	<key>NSMotionUsageDescription</key>
 	<string>We need your motion</string>
+	<key>UIBackgroundModes</key>
+	<array>
+		<string>location</string>
+	</array>
 </dict>
 </plist>

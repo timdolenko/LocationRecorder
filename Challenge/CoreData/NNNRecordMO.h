@@ -15,8 +15,6 @@
 @property (nonatomic) double longitude;
 @property (nonatomic) NSArray *modes;
 
-+(void)removeData;
-
 @end
 
 #endif /* NNNRecordMO_h */
