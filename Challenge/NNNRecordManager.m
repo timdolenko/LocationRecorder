@@ -75,6 +75,7 @@
         [_records addObject:record];
         [_delegate recordManagerDidAddNewRecord];
         [_dataManager saveFromManager:self];
+        NSLog(@"%@", record.description);
     }
 }
 
