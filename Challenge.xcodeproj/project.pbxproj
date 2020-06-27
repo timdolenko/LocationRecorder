@@ -16,6 +16,8 @@
 		3C0AC4EE24A7345F0056B6EA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3C0AC4EC24A7345F0056B6EA /* LaunchScreen.storyboard */; };
 		3C0AC51F24A7394F0056B6EA /* NNNRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C0AC51E24A7394F0056B6EA /* NNNRecord.m */; };
 		3C0AC52324A73CF40056B6EA /* NNNRecordManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C0AC52224A73CF40056B6EA /* NNNRecordManager.m */; };
+		3C0AC53224A75AE00056B6EA /* NNNRecordMO.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C0AC53124A75AE00056B6EA /* NNNRecordMO.m */; };
+		3C0AC53724A75BB00056B6EA /* NNNDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C0AC53624A75BB00056B6EA /* NNNDataManager.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +35,10 @@
 		3C0AC52024A739590056B6EA /* NNNRecord.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NNNRecord.h; sourceTree = "<group>"; };
 		3C0AC52124A73B9A0056B6EA /* NNNRecordManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NNNRecordManager.h; sourceTree = "<group>"; };
 		3C0AC52224A73CF40056B6EA /* NNNRecordManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NNNRecordManager.m; sourceTree = "<group>"; };
+		3C0AC53124A75AE00056B6EA /* NNNRecordMO.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NNNRecordMO.m; sourceTree = "<group>"; };
+		3C0AC53624A75BB00056B6EA /* NNNDataManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NNNDataManager.m; sourceTree = "<group>"; };
+		3C0AC53824A75C240056B6EA /* NNNDataManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NNNDataManager.h; sourceTree = "<group>"; };
+		3C0AC53924A75E190056B6EA /* NNNRecordMO.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NNNRecordMO.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,21 +71,49 @@
 		3C0AC4DD24A7345E0056B6EA /* Challenge */ = {
 			isa = PBXGroup;
 			children = (
+				3C0AC53524A75B8B0056B6EA /* Presentation */,
+				3C0AC53424A75B860056B6EA /* Model */,
+				3C0AC53324A75B780056B6EA /* CoreData */,
 				3C0AC4DE24A7345E0056B6EA /* AppDelegate.swift */,
-				3C0AC4E024A7345E0056B6EA /* SceneDelegate.swift */,
-				3C0AC4E224A7345E0056B6EA /* ViewController.swift */,
-				3C0AC4E424A7345E0056B6EA /* Main.storyboard */,
 				3C0AC4EA24A7345F0056B6EA /* Assets.xcassets */,
-				3C0AC4EC24A7345F0056B6EA /* LaunchScreen.storyboard */,
 				3C0AC4EF24A7345F0056B6EA /* Info.plist */,
-				3C0AC4E724A7345E0056B6EA /* Challenge.xcdatamodeld */,
-				3C0AC52024A739590056B6EA /* NNNRecord.h */,
-				3C0AC51E24A7394F0056B6EA /* NNNRecord.m */,
 				3C0AC51D24A7394E0056B6EA /* Challenge-Bridging-Header.h */,
 				3C0AC52124A73B9A0056B6EA /* NNNRecordManager.h */,
 				3C0AC52224A73CF40056B6EA /* NNNRecordManager.m */,
 			);
 			path = Challenge;
+			sourceTree = "<group>";
+		};
+		3C0AC53324A75B780056B6EA /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				3C0AC4E724A7345E0056B6EA /* Challenge.xcdatamodeld */,
+				3C0AC53924A75E190056B6EA /* NNNRecordMO.h */,
+				3C0AC53124A75AE00056B6EA /* NNNRecordMO.m */,
+				3C0AC53624A75BB00056B6EA /* NNNDataManager.m */,
+				3C0AC53824A75C240056B6EA /* NNNDataManager.h */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
+		3C0AC53424A75B860056B6EA /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				3C0AC52024A739590056B6EA /* NNNRecord.h */,
+				3C0AC51E24A7394F0056B6EA /* NNNRecord.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		3C0AC53524A75B8B0056B6EA /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				3C0AC4E024A7345E0056B6EA /* SceneDelegate.swift */,
+				3C0AC4E224A7345E0056B6EA /* ViewController.swift */,
+				3C0AC4E424A7345E0056B6EA /* Main.storyboard */,
+				3C0AC4EC24A7345F0056B6EA /* LaunchScreen.storyboard */,
+			);
+			path = Presentation;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -155,10 +189,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				3C0AC4E324A7345E0056B6EA /* ViewController.swift in Sources */,
+				3C0AC53224A75AE00056B6EA /* NNNRecordMO.m in Sources */,
 				3C0AC4E924A7345E0056B6EA /* Challenge.xcdatamodeld in Sources */,
 				3C0AC51F24A7394F0056B6EA /* NNNRecord.m in Sources */,
 				3C0AC52324A73CF40056B6EA /* NNNRecordManager.m in Sources */,
 				3C0AC4DF24A7345E0056B6EA /* AppDelegate.swift in Sources */,
+				3C0AC53724A75BB00056B6EA /* NNNDataManager.m in Sources */,
 				3C0AC4E124A7345E0056B6EA /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
