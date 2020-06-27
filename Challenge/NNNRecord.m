@@ -45,14 +45,14 @@
 -(NSString*)modeDescription {
     NSMutableArray* array = [[NSMutableArray alloc] init];
     for(NSNumber* number in _modes) {
-        [array addObject:[self descriptionForMode:(MotionMode)number]];
+        [array addObject:[self descriptionForMode:(MotionMode)number.intValue]];
     }
     
     return [array componentsJoinedByString:@","];
 }
 
 -(NSString*)description {
-    return [NSString stringWithFormat:@"%@ %.02f %@ %.02f %@ %@", @"Lat:", _latitude, @", Lon:", _longitude, @"Mode:", [self modeDescription]];
+    return [NSString stringWithFormat:@"%@ %.02f%@ %.02f %@ %@", @"Lat:", _latitude, @", Lon:", _longitude, @"Mode:", [self modeDescription]];
 }
 
 @end
